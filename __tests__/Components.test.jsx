@@ -40,7 +40,7 @@ describe("test1", () => {
     ];
 
     expect(wrapper.html()).toEqual(expectHtml);
-    expect(wrapper.debug()).toEqual(expectDebug.join("\n"));
-    expect(wrapper.find("ul").children().length).toBe(1);
+    expect(wrapper.debug()).toEqual(expectDebug.join("\n")); // Will be fail.
+    expect(wrapper.find("ul").children().length).toBe(1); // Will be fail.
   });
 });

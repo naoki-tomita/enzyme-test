@@ -10,21 +10,37 @@ describe("test1", () => {
     const wrapper = mount(
       <Component model={model}/>
     );
-    wrapper.find(".up").simulate("click"); // 1
-    wrapper.find(".up").simulate("click"); // 2
-    wrapper.find(".up").simulate("click"); // 3
-    wrapper.find(".class-1-list").childAt(2).find(".class-list__item--text").simulate("click");
+
     expect(renderToJson(wrapper.render())).toMatchSnapshot();
-    expect(wrapper.find(".class-1-list").childAt(2).html().includes("class-selected")).toBe(true);
-    await new Promise(r => {
-      model.onUpdate(() => {
-        if (model.getCount() === 7) {
-          r();
-        }
-      });
-    });
-    console.log(wrapper.html());
-    console.log(wrapper.debug());
-    expect(wrapper.find(".class-1-list").children().length).toBe(7);
+    wrapper.find("button").simulate("click");
+    expect(renderToJson(wrapper.render())).toMatchSnapshot();
+    // Waiting for the count-up to finish.
+    // Because the count up event is delayed by 500 ms after clicking the button..
+    await new Promise(r => model.onUpdate(() => r()));
+    expect(renderToJson(wrapper.render())).toMatchSnapshot();
+
+    const expectHtml =
+      "<div><h1>1</h1><ul><li>ITEM_0</li></ul><button>Button</button></div>";
+    const expectDebug = [
+      "<Component model={{...}}>",
+      "  <div>",
+      "    <h1>",
+      "      0",
+      "    </h1>",
+      "    <ul>",
+      "      <li>",
+      "        ITEM_0",
+      "      </li>",
+      "    </ul>",
+      "    <button onClick={[Function: bound onClick]}>",
+      "      Button",
+      "    </button>",
+      "  </div>",
+      "</Component>",
+    ];
+
+    expect(wrapper.html()).toEqual(expectHtml);
+    expect(wrapper.debug()).toEqual(expectDebug.join("\n"));
+    expect(wrapper.find("ul").children().length).toBe(1);
   });
 });

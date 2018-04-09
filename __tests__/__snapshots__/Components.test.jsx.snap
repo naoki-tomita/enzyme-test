@@ -2,68 +2,40 @@
 
 exports[`test1 should get element. 1`] = `
 <div>
-  <button
-    class="up"
-  >
-    Count up
+  <h1>
+    0
+  </h1>
+  <ul />
+  <button>
+    Button
   </button>
-  <button
-    class="down"
-  >
-    Count down
+</div>
+`;
+
+exports[`test1 should get element. 2`] = `
+<div>
+  <h1>
+    0
+  </h1>
+  <ul />
+  <button>
+    Button
   </button>
-  <div
-    class="count"
-  >
-    4
-  </div>
-  <div
-    class="class-1"
-  >
-    <ul
-      class="class-1-list"
-    >
-      <li
-        class="class-list__item"
-      >
-        <a />
-        <a
-          class="class-list__item--text"
-        >
-          ITEM_0
-        </a>
-      </li>
-      <li
-        class="class-list__item"
-      >
-        <a />
-        <a
-          class="class-list__item--text"
-        >
-          ITEM_1
-        </a>
-      </li>
-      <li
-        class="class-list__item class-selected"
-      >
-        <a />
-        <a
-          class="class-list__item--text"
-        >
-          ITEM_2
-        </a>
-      </li>
-      <li
-        class="class-list__item"
-      >
-        <a />
-        <a
-          class="class-list__item--text"
-        >
-          ITEM_3
-        </a>
-      </li>
-    </ul>
-  </div>
+</div>
+`;
+
+exports[`test1 should get element. 3`] = `
+<div>
+  <h1>
+    1
+  </h1>
+  <ul>
+    <li>
+      ITEM_0
+    </li>
+  </ul>
+  <button>
+    Button
+  </button>
 </div>
 `;

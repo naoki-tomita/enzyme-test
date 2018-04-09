@@ -1,0 +1,8 @@
+{
+  "transform": {
+    ".(js|jsx)": "babel-jest"
+  },
+  "setupFiles": [
+    "<rootDir>/setup.js"
+  ]
+}

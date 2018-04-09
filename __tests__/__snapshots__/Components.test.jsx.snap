@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test1 should get element. 1`] = `
+<div>
+  <button
+    class="up"
+  >
+    Count up
+  </button>
+  <button
+    class="down"
+  >
+    Count down
+  </button>
+  <div
+    class="count"
+  >
+    4
+  </div>
+  <div
+    class="class-1"
+  >
+    <ul
+      class="class-1-list"
+    >
+      <li
+        class="class-list__item"
+      >
+        <a />
+        <a
+          class="class-list__item--text"
+        >
+          ITEM_0
+        </a>
+      </li>
+      <li
+        class="class-list__item"
+      >
+        <a />
+        <a
+          class="class-list__item--text"
+        >
+          ITEM_1
+        </a>
+      </li>
+      <li
+        class="class-list__item class-selected"
+      >
+        <a />
+        <a
+          class="class-list__item--text"
+        >
+          ITEM_2
+        </a>
+      </li>
+      <li
+        class="class-list__item"
+      >
+        <a />
+        <a
+          class="class-list__item--text"
+        >
+          ITEM_3
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

@@ -17,6 +17,7 @@ describe("test1", () => {
     // Waiting for the count-up to finish.
     // Because the count up event is delayed by 500 ms after clicking the button..
     await new Promise(r => model.onUpdate(() => r()));
+    wrapper.update();
     expect(renderToJson(wrapper.render())).toMatchSnapshot();
 
     const expectHtml =
@@ -25,7 +26,7 @@ describe("test1", () => {
       "<Component model={{...}}>",
       "  <div>",
       "    <h1>",
-      "      0",
+      "      1",
       "    </h1>",
       "    <ul>",
       "      <li>",
